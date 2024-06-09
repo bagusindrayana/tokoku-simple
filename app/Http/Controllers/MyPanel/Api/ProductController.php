@@ -154,13 +154,13 @@ class ProductController extends Controller
             $product->product_description = $request->product_description;
             if ($request->hasFile('product_image')) {
                 $oldProductImage = $product->product_image;
-                $product->product_image = $request->file('product_image')->store('product_images');
+                $product->product_image = $request->file('product_image')->store('product_images',['disk'=>'public']);
             }
 
             if ($request->hasFile('product_detail_images')) {
                 $arrayImages = [];
                 foreach ($request->file('product_detail_images') as $image) {
-                    $arrayImages[] = $image->store('product_images');
+                    $arrayImages[] = $image->store('product_images',['disk'=>'public']);
                 }
                 $product->product_detail_images = json_encode($arrayImages);
             }
