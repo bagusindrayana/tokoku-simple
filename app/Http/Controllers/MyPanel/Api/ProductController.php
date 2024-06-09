@@ -72,8 +72,8 @@ class ProductController extends Controller
             'product_name' => 'required',
             'product_price' => 'required',
             'product_description' => 'required',
-            'product_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'product_detail_images' => 'array|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'product_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'product_detail_images' => 'array|image|mimes:jpeg,png,jpg|max:2048',
         ]);
         DB::beginTransaction();
         try {
