@@ -149,8 +149,7 @@
             </div>
             <div
                 class="hidden absolute bottom-0 left-0 justify-center p-4 space-x-4 w-full lg:flex bg-white dark:bg-gray-800 z-20">
-                <span class="icon-[bi--github]"></span>
-           
+                
                
             </div>
         </aside>
