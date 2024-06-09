@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 
 Route::get('/login',[App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
 Route::post('/login',[App\Http\Controllers\Auth\LoginController::class, 'loginAction'])->name('login.action');
