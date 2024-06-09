@@ -51,7 +51,7 @@
                     "name": "product_image",
                     "searchable": true,
                     "mRender": function(data, type, row) {
-                        return `<img src="/storage/${row.product_image}" class="w-24 h-24 rounded-lg" alt="${row.product_name}">`;
+                        return `<img src="/storage/${row.product_image}" class=" h-24 rounded-lg" alt="${row.product_name}">`;
                     }
                 },
                 {

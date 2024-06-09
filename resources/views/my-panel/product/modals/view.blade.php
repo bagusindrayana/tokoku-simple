@@ -78,7 +78,9 @@
             <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                 <div class="text-lg text-gray-900 md:text-xl dark:text-white">
                     <h3 class="font-semibold " id="name">Loading...</h3>
-                    <img src="" alt="" id="image">
+                    <div class="w-full flex justify-center">
+                        <img src="" alt="" id="image" class="mx-auto">
+                    </div>
                     <p class="font-bold" id="price">Rp Loading...</p>
                 </div>
                 <div>
