@@ -6,7 +6,10 @@
             inputs.each(function(){
                 $(this).removeClass('border-red-500');
                 $(this).val('');
-                $(this).next().text('');
+                //get span element next to input
+                const span = form.find(`.error-message-${$(this).attr('name')}`);
+                span.text('');
+                
             });
             form.trigger('reset');
         }
