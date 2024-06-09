@@ -15,11 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 
-Route::get('/login',[App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
-Route::post('/login',[App\Http\Controllers\Auth\LoginController::class, 'loginAction'])->name('login.action');
-Route::group(['prefix'=>'my-panel','middleware'=>'auth','as'=>'my-panel.'],function(){
-    Route::get('/',[App\Http\Controllers\MyPanel\HomeController::class, 'index'])->name('home');
-    Route::get('/logout',[App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
+Route::group(['middleware' => 'guest'], function () {
+    Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'loginAction'])->name('login.action');
+});
+Route::group(['prefix' => 'my-panel', 'middleware' => 'auth', 'as' => 'my-panel.'], function () {
+    Route::get('/', [App\Http\Controllers\MyPanel\HomeController::class, 'index'])->name('home');
+    Route::get('/logout', [App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
 
-    Route::get('product',[App\Http\Controllers\MyPanel\ProductController::class, 'index'])->name('product.index');
+    Route::get('product', [App\Http\Controllers\MyPanel\ProductController::class, 'index'])->name('product.index');
 });
